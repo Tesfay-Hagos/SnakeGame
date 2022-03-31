@@ -5,6 +5,7 @@ UP = 90
 LEFT = 180
 RIGHT = 0
 
+
 class Snake:
     screen = Screen()
     screen.tracer(0)
@@ -55,3 +56,10 @@ class Snake:
             new_y = self.snake[seq_num - 1].ycor()
             self.snake[seq_num].goto(new_x, new_y)
         self.head.forward(20)
+
+    def reset(self):
+        for seg in self.snake:
+            seg.goto(1000, 1000)
+        self.snake.clear()
+        self.create_snake()
+        self.head = self.snake[0]

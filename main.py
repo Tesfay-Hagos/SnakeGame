@@ -4,7 +4,7 @@ from scoreboard import ScoreBoard
 from SnakeMain import Snake
 from food import Food
 
-screen= Screen()
+screen = Screen()
 screen.setup(width=600, height=600, startx=-300, starty=0)
 screen.bgcolor("black")
 screen.title("Snake_game_by_TesfayH")
@@ -28,14 +28,14 @@ while game_is_on:
         food.random_move()
         score_board.increase_score()
         snake.extend()
-    if snake.head.xcor() > 260 or snake.head.xcor() < -260 or snake.head.ycor() >260 or snake.head.ycor() < -260:
-        game_is_on = False
-        score_board.end_game()
+    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
+        score_board.reset()
+        snake.reset()
 
     for segment in snake.snake[1:]:
         if snake.head.distance(segment) < 10:
-            game_is_on = False
-            score_board.end_game()
+            score_board.reset()
+            snake.reset()
 
 
 
