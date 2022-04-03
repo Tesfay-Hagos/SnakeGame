@@ -1,5 +1,7 @@
-STARTING_POSITION = [(0, 0), (-20, 0), (-40, 0)]
+
 from turtle import Turtle, Screen
+
+STARTING_POSITION = [(0, 0), (-20, 0), (-40, 0)]
 DOWN = 270
 UP = 90
 LEFT = 180
